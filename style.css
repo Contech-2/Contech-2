@@ -1,0 +1,1224 @@
+@font-face {
+    font-family: "Bebas";
+    src: url(fonts/BebasNeue-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Roboto Light";
+    src: url(fonts/Roboto-Light.ttf)
+}
+
+
+@font-face {
+    font-family: "Roboto Medium";
+    src: url(fonts/Roboto-Medium.ttf)
+}
+
+/*reset css*/
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+:root {
+    --azul-contech: #3066BE;
+    --background: radial-gradient(circle, rgba(48, 102, 190, 1) 0%, rgba(48, 102, 190, 1) 58%, rgba(52, 170, 216, 1) 100%);
+}
+
+body {
+    background-color: #f2f2f2;
+}
+
+
+
+
+h2 {
+    font-family: "Bebas";
+    font-size: 28px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container-grid {
+    width: 80vw;
+    max-width: 1400px;
+
+    margin: 0 auto;
+}
+
+
+header button {
+    display: none;
+    color: var(--azul-contech);
+}
+
+header {
+    height: 100px;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+header .container-grid {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu {
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+header img {
+    width: 15%;
+    display: flex;
+    margin-right: 15%;
+
+}
+
+.menu a {
+    font-family: "Roboto Light";
+    font-size: 18px;
+
+    text-decoration: none;
+    color: black;
+    transition: 500ms ease;
+    text-decoration: underline transparent;
+    transition: text-decoration 500ms ease;
+
+
+}
+
+.menu b,
+.menu a:hover {
+    color: #B9B541;
+    font-family: "Roboto Medium";
+    font-weight: 300;
+}
+
+header {
+    color: white;
+    /* Cor do texto */
+    padding: 20px;
+    /* Espaçamento interno */
+    text-align: left;
+    /* Centraliza o texto */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Sombra */
+}
+
+/* 1. Preparar o container pai */
+.banner {
+    position: relative;
+    /* Necessário para controlar os elementos dentro dele */
+    width: 100%;
+    top: 100px;
+    /* Removemos o background fixo aqui, ou deixamos como fallback se o vídeo falhar */
+    background-color: #3066BE;
+    overflow: hidden;
+    /* Garante que nada saia das bordas */
+
+    margin-bottom: 10%;
+}
+
+/* 2. Estilizar o vídeo para ficar no fundo */
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Faz o vídeo preencher tudo sem distorcer */
+    z-index: 0;
+    /* Fica na camada mais baixa */
+}
+
+/* 3. (Opcional) Manter o tom azulado original por cima do vídeo */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Usei o seu gradiente original, mas mudei a opacidade das cores para o vídeo aparecer */
+    background: radial-gradient(circle, rgba(48, 102, 190, 0.6) 0%, rgba(48, 102, 190, 0.5) 58%, rgba(52, 170, 216, 0.6) 100%);
+
+    z-index: 1;
+    /* Fica acima do vídeo */
+}
+
+/* 4. Garantir que o texto fique na frente de tudo */
+.conteudo-banner {
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 5%;
+
+    /* Adicionado para garantir que o texto fique sobre o vídeo */
+    position: relative;
+    z-index: 2;
+}
+
+/* O restante do seu CSS (p, b, span) continua igual... */
+.conteudo-banner p {
+    width: 800px;
+    color: white;
+    /* Cuidado: se o vídeo for escuro, mude para white */
+    font-family: "Bebas";
+    font-size: 60px;
+    text-align: left;
+    line-height: 1.8;
+    letter-spacing: 2px;
+}
+
+.conteudo-banner b {
+    width: 530px;
+    background: local;
+    background-color: #3066BE;
+    border-radius: 10px;
+    padding: 2%;
+    padding-bottom: 1%;
+    padding-top: 1%;
+    color: white;
+    font-weight: 300;
+}
+
+.conteudo-banner span {
+    color: white;
+    /* Verifique se o contraste continua bom com o vídeo */
+}
+
+#sobre p {
+    font-size: 24px;
+    font-family: "Roboto Light";
+    color: black;
+
+    text-align: left;
+    line-height: 1.9;
+
+    margin-bottom: 2%;
+}
+
+#sobre b {
+    color: #3066BE;
+    font-family: "Roboto Medium";
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.texto-button {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#sobre button {
+    background-color: #3066BE;
+    color: var(--color-text-light);
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.5em;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+    font-family: "Bebas";
+
+    letter-spacing: 1px;
+}
+
+#sobre a,
+#newsletter a {
+    width: 100%;
+    text-decoration: none;
+    color: white;
+}
+
+#sobre button:hover {
+
+    background-color: #215486;
+
+}
+
+#sobre,
+.texto-img {
+    width: 100%;
+    display: flex;
+
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 5%;
+
+    height: 400px;
+
+    margin-bottom: 10%;
+}
+
+#sobre img {
+    width: 30%;
+    margin-right: 5%;
+}
+
+#sobre .p2 {
+    display: none;
+}
+
+#newsletter {
+    text-align: center;
+
+    margin-bottom: 10%;
+
+}
+
+#newsletter h2 {
+    margin-bottom: 50px;
+    font-size: 60px;
+    letter-spacing: 2%;
+    font-weight: 300;
+    margin-bottom: 5%;
+}
+
+#newsletter b {
+    color: #3066BE;
+    font-weight: 300;
+}
+
+.container-cards {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    height: 5%;
+    width: 400px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 20px;
+    margin-bottom: 5%;
+
+    background: radial-gradient(circle, rgba(48, 102, 190, 1) 0%, rgba(48, 102, 190, 1) 58%, rgba(52, 170, 216, 1) 100%);
+
+
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.348);
+
+}
+
+.card img {
+    height: 30%;
+    width: 100%;
+
+    margin-bottom: 1%;
+    border-radius: 10px;
+
+}
+
+.card h3 {
+    height: 50%;
+
+    font-size: 28px;
+    font-family: "Bebas";
+    color: white;
+    font-weight: 300;
+    letter-spacing: 2px;
+    padding-top: 2%;
+}
+
+
+.card button {
+    width: 100%;
+    height: 80%;
+
+    background-color: var(--background);
+
+    border: none;
+    border-radius: 2px;
+
+    color: white;
+
+    font-family: "Roboto Light";
+    font-size: 20px;
+    line-height: 1.5;
+
+    cursor: pointer;
+
+    transition: background-color 500ms ease;
+}
+
+.card button:hover {
+    background-color: #3066BE;
+}
+
+
+
+.textos p {
+    width: 100%;
+
+    font-family: "Roboto Light";
+    font-size: 24px;
+    line-height: 1.5;
+    color: black;
+
+    padding: 1%;
+    text-align: left;
+
+}
+
+.textos b {
+    font-family: "Roboto Medium";
+    letter-spacing: 1px;
+}
+
+
+.textos button {
+    background-color: #3066BE;
+    color: var(--color-text-light);
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.5em;
+    font-weight: 300;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+    font-family: "Bebas";
+    margin-top: 5%;
+}
+
+
+.textos button:hover {
+
+    background-color: #215486;
+
+}
+
+
+
+#contato {
+    text-align: center;
+
+    margin-bottom: 5%;
+
+}
+
+#contato h2 {
+    margin-bottom: 5%;
+    color: black;
+    text-align: center;
+
+    font-size: 60px;
+
+    font-weight: 300;
+}
+
+#contato b {
+    color: #3066BE;
+    font-weight: 300;
+}
+
+#contato .form b {
+    color: black;
+    font-family: "Roboto Medium";
+
+}
+
+#contato form {
+    width: 650px;
+    height: 560px;
+
+    margin: auto;
+    padding: 40px 0;
+    padding-bottom: 2%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border-radius: 10px;
+
+    background: radial-gradient(circle, rgba(48, 102, 190, 0.2) 0%, rgba(48, 102, 190, 0.2) 58%, rgba(52, 170, 216, 0.2) 100%);
+
+    border: none;
+
+    color: black;
+    font-family: "Roboto Light";
+    font-size: 18px;
+
+    border-radius: 10px;
+    box-shadow: -1px 2px 4px 0px rgba(0, 0, 0, 0.2);
+}
+
+.campo {
+    width: 80%;
+
+    text-align: left;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+
+}
+
+.campo-descricao {
+    width: 80%;
+    height: 30%;
+
+    text-align: left;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    margin-bottom: 10px;
+}
+
+.campo input,
+.campo-telefone input {
+    height: 40px;
+
+    background-color: white;
+
+    border: 1px solid #00000015;
+    border-radius: 4px;
+
+    text-indent: 10px;
+
+    outline: none;
+}
+
+.campo-descricao textarea {
+    height: 130px;
+    color: #0F1F3C;
+    background-color: white;
+
+    border: 1px solid #00000015;
+    border-radius: 4px;
+
+    outline: none;
+
+    padding: 10px;
+    margin-bottom: 10px;
+
+    resize: none;
+}
+
+textarea {
+    resize: none;
+}
+
+.campo-telefone {
+    display: flex;
+
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 10px;
+
+    width: 80%;
+
+    text-align: left;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+}
+
+
+.ddd-wrapper {
+    flex: 1;
+}
+
+.telefone-wrapper {
+    flex: 2;
+
+}
+
+input[name="telefone"],
+input[name="ddd"] {
+    margin-top: 8px;
+    width: 100%;
+}
+
+.campo label,
+.campo-descricao label,
+.campo-telefone label {
+    margin-bottom: 10px;
+}
+
+.campo input,
+.campo-descricao textarea,
+.campo-telefone input {
+    font-family: "Roboto Light";
+    font-size: 18px;
+
+}
+
+.campo input::placeholder,
+.campo-descricao textarea::placeholder,
+.campo-telefone input::placeholder {
+    color: #a0a0a0;
+}
+
+.campo input:focus,
+.campo-descricao textarea:focus {
+    outline: 2px solid #F25922;
+    border: none;
+}
+
+#contato form button {
+
+    width: 40%;
+
+    background-color: #3066BE;
+    color: white;
+
+    border: none;
+    border-radius: 10px;
+
+    font-size: 28px;
+    font-family: "Bebas";
+    font-weight: 300;
+    letter-spacing: 1px;
+
+    margin-top: 2%;
+    padding: 2%;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition: background-color 500ms;
+}
+
+#contato form button:hover {
+    background-color: #244f96;
+}
+
+
+
+footer {
+    height: 290px;
+
+    background-color: #3066BE;
+}
+
+footer .container-grid {
+    height: 100%;
+    padding-top: 70px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.redes-sociais a {
+    height: 50%;
+    margin: auto;
+
+    margin-left: 8px;
+    margin-bottom: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+
+    color: white;
+    font-family: "Roboto Light";
+    font-size: 18px;
+    text-decoration: none;
+}
+
+
+.numero {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.email {
+    display: flex;
+    flex-direction: row-reverse;
+
+}
+
+.instagram {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.linkedin {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.redes-sociais svg {
+    height: 22px;
+    color: white;
+}
+
+
+.redes-sociais svg:hover {
+    color: #E7E247;
+}
+
+.menu-fechado {
+    display: none;
+}
+
+
+#icone-barras {
+    display: none;
+}
+
+
+
+@media screen and (max-width: 1720px) {
+
+    header {
+        position: relative;
+        width: 100%
+    }
+
+    .banner {
+        top: auto;
+    }
+}
+
+@media screen and (max-width: 1530px) {
+    .card {
+        width: 340px;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    header {
+        position: relative;
+        width: 100%
+    }
+
+    header button {
+        width: 50px;
+
+        display: unset;
+
+        background: none;
+        border: none;
+    }
+
+    header img {
+        width: 25%;
+    }
+
+    header svg {
+        fill: var(--azul-contech);
+    }
+
+    nav.menu {
+        height: 300px;
+        width: 30%;
+
+        padding: 5%;
+
+
+        flex-direction: column;
+        justify-content: space-around;
+
+        background-color: #f2f2f2c1;
+
+        position: absolute;
+        top: 100px;
+        right: 0px;
+
+        z-index: 3;
+    }
+
+.menu b {
+    color: #3066BE;
+}
+
+    #sobre {
+        padding: 15%;
+
+        margin-top: 10%;
+        display: flex;
+
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .texto-img {
+        display: none;
+    }
+
+    #sobre p {
+        width: 100%;
+        text-align: left;
+        align-items: center;
+        font-size: 22px;
+        line-height: 1.5;
+        justify-self: center;
+
+        margin-bottom: 1%;
+    }
+
+    #sobre .p2 {
+        display: unset;
+    }
+
+    #sobre button {
+        background-color: #3066BE;
+        color: white;
+        border: none;
+        padding: 10px 30px;
+        font-size: 1.5em;
+        font-weight: 300;
+        text-transform: uppercase;
+        cursor: pointer;
+        border-radius: 10px;
+        transition: background-color 0.3s;
+        font-family: "Bebas";
+
+        letter-spacing: 1px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin-top: 5%;
+
+    }
+
+    #sobre .p2 img {
+
+        width: 100%;
+        margin-bottom: 5%;
+        display: unset;
+        align-items: center;
+    }
+
+    .card {
+        height: 480px;
+        width: 300px;
+    }
+
+.card img {
+    height: 50%;
+}
+
+    .card h2 {
+        padding: 2%;
+    }
+
+    .card button {
+        padding: 2%;
+    }
+
+    #contato {
+        width: 100%;
+        padding-top: 5%;
+        padding-bottom: 10%;
+        margin-bottom: 0;
+        background: radial-gradient(circle, rgba(48, 102, 190, 0.2) 0%, rgba(48, 102, 190, 0.2) 58%, rgba(52, 170, 216, 0.2) 100%);
+    }
+
+
+    #contato form {
+        width: 100%;
+        background: none;
+        box-shadow: none;
+
+    }
+}
+
+
+@media screen and (max-width: 1080px) {
+
+
+    .conteudo-banner p {
+        font-size: 40px;
+        width: 85%
+    }
+
+    #sobre {
+        padding: 80px 15%;
+
+    }
+
+    #sobre h2 {
+        margin-top: 40px;
+    }
+
+    #sobre p {
+        margin-bottom: 15px;
+    }
+
+    .container-cards {
+        flex-wrap: wrap;
+    }
+
+
+
+    .card {
+        height: 400px;
+
+
+        flex-shrink: 0;
+        flex-grow: 0;
+        flex-basis: 40%;
+    }
+
+    .card button {
+        font-size: 16px
+    }
+
+    .card h3 {
+        font-size: 20px;
+        height: 20%
+    }
+
+    .card img {
+      height: 50%;
+    }
+
+    .textos button {
+        width: 40%;
+    }
+
+    footer {
+        height: unset;
+    }
+
+    footer .container-grid {
+        padding: 80px;
+        flex-direction: column;
+    }
+
+    footer img {
+        margin-bottom: 100px;
+    }
+
+    footer p {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .redes-sociais {
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 1148px) {
+
+
+    .container-cards {
+        flex-wrap: nowrap;
+
+        gap: 2%;
+
+        overflow-x: auto;
+    }
+
+
+    #newsletter .container-grid {
+        width: 100%;
+        margin: unset;
+    }
+
+    .card {
+        flex-basis: 45%;
+    }
+
+}
+
+@media screen and (max-width: 890px) {
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    #sobre {
+        margin-top: 30px;
+
+        padding-top: 20px;
+        height: unset;
+
+        padding-bottom: unset;
+    }
+
+    #sobre p {
+        margin-bottom: 10px;
+    }
+
+
+
+    .container-cards {
+        flex-wrap: nowrap;
+
+        gap: 40px;
+
+        overflow-x: auto;
+    }
+
+    .card {
+        height: 500x;
+        width: 400px;
+
+        flex-basis: unset;
+    }
+
+
+    .card button,
+    .card h3 {
+        padding: 2%
+    }
+
+    .card button {
+        font-size: 18px;
+    }
+
+
+    #newsletter h2,
+    #contato h2 {
+
+        font-size: 36px;
+
+        margin-top: 30px;
+        margin-bottom: 50px;
+    }
+
+    #newsletter p {
+        font-size: 1.2em;
+
+    }
+
+
+}
+
+
+@media screen and (max-width: 700px) {
+
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .conteudo-banner p {
+        height: unset;
+        font-size: 36px;
+    }
+
+
+
+    #sobre {
+        padding-top: 10px;
+        height: unset;
+
+    }
+
+
+    .container-cards {
+        flex-wrap: nowrap;
+
+        gap: 20px;
+
+        overflow-x: auto;
+    }
+
+    .card {
+        height: 400px;
+        width: 400px;
+
+        flex-basis: unset;
+    }
+
+    .card:first-child {
+        margin-left: 30px;
+    }
+
+    .card:last-child {
+        margin-right: 30px;
+    }
+
+    .textos p {
+        justify-content: space-between;
+        padding-top: 5%;
+        margin-bottom: 2px;
+    }
+
+    .textos button {
+        padding: 10px 30px;
+    }
+
+    #contato {
+        margin-bottom: unset;
+    }
+
+    .campo,
+    .campo-descricao {
+        width: 90%;
+    }
+
+    .campo-telefone {
+        width: 90%;
+    }
+}
+
+
+@media screen and (max-width: 560px) {
+    h2 {
+        font-size: 22px;
+    }
+
+    .conteudo-banner p {
+        font-size: 30px;
+    }
+
+    .conteudo-banner img {
+        height: 125px;
+        width: 90px;
+
+    }
+
+    .container-grid {
+        width: 90%;
+    }
+
+    header img {
+        width: 40%;
+
+    }
+
+    .banner {
+        background-size: cover;
+    }
+
+
+    nav.menu {
+        width: 100%;
+    }
+
+    #sobre {
+        padding-right: 4%;
+        padding-left: 4%;
+
+        padding-top: 10px;
+        margin-bottom: 15%;
+
+
+    }
+
+    #sobre img {
+        width: 50%;
+    }
+
+    #sobre button {
+        margin: 5%;
+    }
+
+    #sobre p {
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+
+    #newsletter .container-grid {
+        width: 100%;
+
+    }
+
+
+    .container-cards {
+        flex-wrap: nowrap;
+
+        gap: 40px;
+
+        overflow-x: auto;
+    }
+
+    .card {
+        height: 400px;
+        width: 280px;
+
+        flex-basis: unset;
+    }
+
+    .card:first-child {
+        margin-left: 30px;
+    }
+
+    .card:last-child {
+        margin-right: 30px;
+    }
+
+    .textos button {
+        width: 70%;
+    }
+
+    #contato h2 {
+        color: black;
+        margin-bottom: unset;
+        font-size: 1.8em;
+    }
+
+    #contato form {
+        border: 0px;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    #contato form button {
+        width: 55%;
+        font-size: 22px;
+        padding: 1%;
+    }
+
+}
+
+@media screen and (max-width: 427px) {
+    header img {
+        width: 160px;
+    }
+
+    header svg {
+        width: 40px;
+    }
+
+    .conteudo-banner p {
+        font-size: 1.6em;
+    }
+
+    .textos button {
+        padding: 5%;
+        width: 70%;
+    }
+
+
+    #contato {
+        margin-top: 22%;
+        padding-top: 2%;
+    }
+}

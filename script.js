@@ -64,3 +64,44 @@ window.onload = function() {
         document.body.classList.add('dark-mode');
     }
 }
+
+
+
+
+function Contatar(event) {
+    // 1. Previne o recarregamento da página
+    event.preventDefault();
+
+    // 2. Feedback visual no botão
+    const btn = event.target.querySelector('button');
+    const textoOriginal = btn.innerText;
+    btn.innerText = 'Enviando...';
+
+    // 3. Captura os dados do formulário
+    const templateParams = {
+        nome: document.getElementById('campo-nome').value,
+        email: document.getElementById('campo-email').value,
+        telefone: `(${document.getElementById('ddd').value}) ${document.getElementById('telefone').value}`,
+        mensagem: document.getElementById('campo-texto').value
+    };
+
+    // 4. IDs de configuração do EmailJS
+    const serviceID = 'service_hmfbmmb';
+    const templateID = 'template_hl0mhn3'; // <--- ID Aplicado aqui
+
+    // 5. Envia o email
+    emailjs.send(serviceID, templateID, templateParams)
+        .then(function(response) {
+            console.log('SUCESSO!', response.status, response.text);
+            alert('Mensagem enviada com sucesso!');
+            
+            // Limpa o formulário e restaura o botão
+            event.target.reset();
+            btn.innerText = textoOriginal;
+            
+        }, function(error) {
+            console.log('FALHA...', error);
+            alert('Ocorreu um erro ao enviar. Verifique o console para detalhes.');
+            btn.innerText = textoOriginal;
+        });
+}
